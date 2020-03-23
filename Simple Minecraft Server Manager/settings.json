@@ -1,0 +1,16 @@
+{
+  "generalSettigns": {
+    "enableMods": true
+  },
+  "serverSettings": {
+    "Version": "1.12.2",
+    "MOTD": "test MotD",
+    "AllowOnlyPremium": false,
+    "PvPAllowed": true,
+    "ServerPort": 25565
+  },
+  "remoteConfig": {
+    "Enabled": false,
+    "Port": 6969
+  }
+}

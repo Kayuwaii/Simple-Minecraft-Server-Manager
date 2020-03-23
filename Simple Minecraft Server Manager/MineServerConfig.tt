@@ -1,0 +1,46 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="Simple_Minecraft_Server_Manager.Settings" name="Settings" #>
+#Minecraft server properties
+#Sat Mar 21 19:06:38 CET 2020
+spawn-protection=16
+max-tick-time=60000
+generator-settings=
+force-gamemode=false
+allow-nether=true
+gamemode=0
+broadcast-console-to-ops=true
+enable-query=false
+player-idle-timeout=0
+difficulty=1
+spawn-monsters=true
+op-permission-level=4
+pvp=<#= Settings.ServerSettings.PvPAllowed #>
+snooper-enabled=true
+level-type=DEFAFULT
+hardcore=false
+enable-command-block=true
+max-players=20
+network-compression-threshold=256
+resource-pack-sha1=
+max-world-size=29999984
+server-port=<#= Settings.ServerSettings.ServerPort #>
+server-ip=
+spawn-npcs=true
+allow-flight=false
+level-name=world
+view-distance=10
+resource-pack=
+spawn-animals=true
+white-list=false
+generate-structures=true
+online-mode=<#= Settings.ServerSettings.AllowOnlyPremium #>
+max-build-height=256
+level-seed=
+prevent-proxy-connections=false
+enable-rcon=false
+motd=<#= Settings.ServerSettings.MOTD #>
+
