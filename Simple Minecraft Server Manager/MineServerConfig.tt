@@ -18,7 +18,7 @@ player-idle-timeout=0
 difficulty=1
 spawn-monsters=true
 op-permission-level=4
-pvp=<#= Settings.ServerSettings.PvPAllowed #>
+pvp=<#= Settings.ServerSettings.PvPAllowed.ToString().ToLower() #>
 snooper-enabled=true
 level-type=DEFAFULT
 hardcore=false
@@ -37,7 +37,7 @@ resource-pack=
 spawn-animals=true
 white-list=false
 generate-structures=true
-online-mode=<#= Settings.ServerSettings.AllowOnlyPremium #>
+online-mode=<#= Settings.ServerSettings.AllowOnlyPremium.ToString().ToLower() #>
 max-build-height=256
 level-seed=
 prevent-proxy-connections=false

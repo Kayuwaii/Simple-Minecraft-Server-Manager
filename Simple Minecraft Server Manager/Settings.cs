@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +27,23 @@ namespace Simple_Minecraft_Server_Manager
         public void Save()
         {
             GenMinecraftProperties();
+            SaveJson();
+        }
+
+        private void SaveJson()
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(this);
+                File.WriteAllText("settings.json", json);
+            }
+            catch (Exception ex) //Any Exception, we don't wanna risk any error in this stage.
+            {
+                Engine.Base.General.ErrorMessageBox("Error while saving your settings. \n" +
+                    "Minecraft Settings should be properly generated. \n" +
+                    "Try saving again or restart the program.",
+                    "ERROR WRITING SETTINGS");
+            }
         }
 
         private void GenMinecraftProperties()
@@ -34,13 +53,12 @@ namespace Simple_Minecraft_Server_Manager
             t.Session.Add("Settings", this); // "Pass" the settings
             t.Initialize();
             string resultText = t.TransformText();
-            System.IO.File.WriteAllText("server.properties", resultText); //overrides if exists
+            File.WriteAllText("Minecraft/server.properties", resultText); //overrides if exists
         }
     }
 
     public class ServerSettings
     {
-        public string Version { get; set; }
         public string MOTD { get; set; }
         public bool AllowOnlyPremium { get; set; }
         public bool ModsEnabled { get; set; }

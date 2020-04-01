@@ -45,7 +45,7 @@ op-permission-level=4
 pvp=");
             
             #line 21 "E:\Server Manager\Simple Minecraft Server Manager\Simple Minecraft Server Manager\MineServerConfig.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Settings.ServerSettings.PvPAllowed));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Settings.ServerSettings.PvPAllowed.ToString().ToLower()));
             
             #line default
             #line hidden
@@ -63,7 +63,7 @@ pvp=");
                     "true\r\nonline-mode=");
             
             #line 40 "E:\Server Manager\Simple Minecraft Server Manager\Simple Minecraft Server Manager\MineServerConfig.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Settings.ServerSettings.AllowOnlyPremium));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Settings.ServerSettings.AllowOnlyPremium.ToString().ToLower()));
             
             #line default
             #line hidden
